@@ -1,0 +1,4 @@
+[wokwi]
+version = 1
+firmware = '.pio/build/genericSTM32F103C8/firmware.elf'
+elf = '.pio/build/genericSTM32F103C8/firmware.elf'

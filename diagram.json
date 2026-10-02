@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "author": "EcoGuard-RTOS STM32 Team",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-stm32-bluepill", "id": "stm", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "mq2_ao", "top": -140, "left": -220, "attrs": { "label": "MQ-2 Gas AO (PA0)" } },
+    { "type": "wokwi-pushbutton", "id": "mq2_do", "top": -40, "left": -220, "attrs": { "color": "orange", "label": "MQ-2 Gas DO (PA1)" } },
+    { "type": "wokwi-pushbutton", "id": "flame_do", "top": 40, "left": -220, "attrs": { "color": "red", "label": "Flame Sensor (PA2)" } },
+    { "type": "wokwi-dht22", "id": "dht22", "top": -180, "left": 220, "attrs": { "label": "DHT22 (PA3)" } },
+    { "type": "wokwi-relay-module", "id": "relay_fan", "top": -40, "left": 220, "attrs": { "label": "Fan Relay (PB0)" } },
+    { "type": "wokwi-buzzer", "id": "buzzer1", "top": 80, "left": 220, "attrs": { "label": "Buzzer (PB1)" } },
+    { "type": "wokwi-led", "id": "led_green", "top": 160, "left": 220, "attrs": { "color": "green", "label": "SAFE (PB12)" } },
+    { "type": "wokwi-led", "id": "led_red", "top": 220, "left": 220, "attrs": { "color": "red", "label": "ALARM (PB13)" } },
+    { "type": "board-ssd1306", "id": "oled1", "top": -180, "left": 0, "attrs": {} }
+  ],
+  "connections": [
+    [ "stm:GND.1", "mq2_ao:GND", "black", [ "v0" ] ],
+    [ "stm:3V3.1", "mq2_ao:VCC", "red", [ "v0" ] ],
+    [ "stm:A0", "mq2_ao:SIG", "green", [ "v0" ] ],
+
+    [ "stm:GND.1", "mq2_do:1.1", "black", [ "v0" ] ],
+    [ "stm:A1", "mq2_do:2.1", "orange", [ "v0" ] ],
+
+    [ "stm:GND.1", "flame_do:1.1", "black", [ "v0" ] ],
+    [ "stm:A2", "flame_do:2.1", "red", [ "v0" ] ],
+
+    [ "stm:GND.1", "dht22:GND", "black", [ "v0" ] ],
+    [ "stm:3V3.1", "dht22:VCC", "red", [ "v0" ] ],
+    [ "stm:A3", "dht22:SDA", "gold", [ "v0" ] ],
+
+    [ "stm:GND.1", "relay_fan:GND", "black", [ "v0" ] ],
+    [ "stm:5V.1", "relay_fan:VCC", "red", [ "v0" ] ],
+    [ "stm:B0", "relay_fan:IN", "purple", [ "v0" ] ],
+
+    [ "stm:GND.1", "buzzer1:1", "black", [ "v0" ] ],
+    [ "stm:B1", "buzzer1:2", "purple", [ "v0" ] ],
+
+    [ "stm:GND.1", "led_green:C", "black", [ "v0" ] ],
+    [ "stm:B12", "led_green:A", "green", [ "v0" ] ],
+
+    [ "stm:GND.1", "led_red:C", "black", [ "v0" ] ],
+    [ "stm:B13", "led_red:A", "red", [ "v0" ] ],
+
+    [ "stm:GND.1", "oled1:GND", "black", [ "v0" ] ],
+    [ "stm:3V3.1", "oled1:VCC", "red", [ "v0" ] ],
+    [ "stm:B6", "oled1:SCL", "blue", [ "v0" ] ],
+    [ "stm:B7", "oled1:SDA", "cyan", [ "v0" ] ]
+  ]
+}
