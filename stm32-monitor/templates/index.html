@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101713">
+  <title>Blue Pill · Bảng điều khiển</title>
+  <style>
+    :root{color-scheme:dark;--bg:#101713;--panel:#18211c;--panel-2:#1d2922;--line:#2a382f;--text:#edf4ed;--muted:#91a397;--green:#b7f36b;--green-d:#273b20;--amber:#f3c879;--red:#ff8179;--radius:18px}
+    *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 82% -15%,#31412b 0,transparent 34%),var(--bg);color:var(--text);font:15px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;min-height:100vh}
+    button,input{font:inherit}button{cursor:pointer}header{max-width:1440px;margin:auto;padding:28px 34px 20px;display:flex;justify-content:space-between;align-items:center;gap:20px}.brand{display:flex;align-items:center;gap:14px}.brand-mark{width:44px;height:44px;border:1px solid #4d6246;border-radius:14px;display:grid;place-items:center;color:var(--green);background:#202b22;font-weight:800;letter-spacing:-2px}.eyebrow,.section-kicker{text-transform:uppercase;font-size:11px;letter-spacing:.14em;color:var(--muted);font-weight:700}.brand h1{font-size:20px;line-height:1.1;margin:4px 0 0;letter-spacing:-.03em}.header-right{display:flex;align-items:center;gap:18px}.port-label{font:12px ui-monospace,SFMono-Regular,Consolas,monospace;color:var(--muted)}.status{display:flex;align-items:center;gap:9px;border:1px solid var(--line);background:#18221b;padding:9px 13px;border-radius:99px;font-size:12px;font-weight:700}.dot{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 4px #ff81791b}.status.online .dot{background:var(--green);box-shadow:0 0 0 4px #b7f36b1c}.status.online{color:var(--green)}main{max-width:1440px;margin:0 auto;padding:8px 34px 38px}.intro{display:flex;justify-content:space-between;align-items:end;gap:16px;margin:10px 0 24px}.intro h2{margin:5px 0 3px;font-size:27px;letter-spacing:-.045em}.intro p{margin:0;color:var(--muted);font-size:13px}.updated{font:11px ui-monospace,SFMono-Regular,Consolas,monospace;color:var(--muted)}.metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.card{background:linear-gradient(145deg,#1b261f,#17201b);border:1px solid var(--line);border-radius:var(--radius);padding:20px;min-width:0}.metric-head{display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:12px;font-weight:650}.metric-icon{display:grid;place-items:center;width:32px;height:32px;border-radius:10px;background:#263529;color:var(--green);font-size:14px;font-weight:800}.metric-value{font-size:38px;letter-spacing:-.055em;font-weight:680;line-height:1.2;margin:19px 0 7px}.unit{font-size:17px;color:var(--muted);font-weight:500;letter-spacing:0}.metric-foot{font-size:11px;color:var(--muted)}.smoke-meter{height:5px;background:#2b352e;border-radius:9px;margin-top:17px;overflow:hidden}.smoke-fill{height:100%;width:0;background:linear-gradient(90deg,var(--green),var(--amber));border-radius:9px;transition:width .3s}.button-state{display:flex;gap:10px;margin-top:18px}.button-pill{flex:1;border:1px solid var(--line);border-radius:11px;padding:11px 12px;font-size:12px;color:var(--muted);display:flex;justify-content:space-between}.button-pill strong{color:var(--text)}.layout{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(320px,.85fr);gap:14px;margin-top:14px}.section-head{display:flex;align-items:start;justify-content:space-between;gap:12px;margin-bottom:17px}.section-head h3{font-size:15px;margin:0;letter-spacing:-.02em}.section-head p{font-size:11px;color:var(--muted);margin:3px 0 0}.live-tag{font:10px ui-monospace,SFMono-Regular,Consolas,monospace;color:var(--green);background:#283824;padding:5px 8px;border-radius:6px}.control-list{display:grid;gap:9px}.control-row{display:flex;align-items:center;justify-content:space-between;padding:12px 13px;border:1px solid var(--line);border-radius:12px;background:#17201a}.control-name{display:flex;align-items:center;gap:11px;font-size:13px;font-weight:650}.led-light{width:10px;height:10px;border-radius:50%;background:#536058}.led-light.on{background:var(--green);box-shadow:0 0 13px #b7f36b8c}.toggle{width:43px;height:25px;border:0;border-radius:99px;padding:3px;background:#354239;transition:.2s}.toggle:after{content:"";display:block;width:19px;height:19px;border-radius:50%;background:#a6b3a8;transition:.2s}.toggle[aria-checked="true"]{background:#668c3e}.toggle[aria-checked="true"]:after{transform:translateX(18px);background:#efffdb}.toggle:disabled,button:disabled,input:disabled{opacity:.45;cursor:not-allowed}.fan-control{margin-top:13px;padding:14px;border:1px solid var(--line);border-radius:12px;background:#17201a}.fan-top{display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:650}.fan-top output{font:12px ui-monospace,SFMono-Regular,Consolas,monospace;color:var(--green)}input[type=range]{width:100%;accent-color:var(--green);margin:17px 0 11px}.fan-bottom{display:flex;align-items:center;justify-content:space-between}.fan-bottom span{font-size:10px;color:var(--muted)}.send-button{background:var(--green);color:#162012;font-weight:750;font-size:11px;border:0;padding:8px 12px;border-radius:8px}.warning{display:flex;gap:9px;color:#d0b77e;font-size:10px;line-height:1.45;margin:14px 1px 0}.chart-wrap{height:218px;position:relative}canvas{width:100%;height:100%}.chart-legend{display:flex;align-items:center;gap:7px;color:var(--muted);font-size:10px;margin-top:9px}.legend-dot{width:7px;height:7px;border-radius:50%;background:var(--green)}.lower{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(320px,.85fr);gap:14px;margin-top:14px}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;white-space:nowrap;font-size:11px}th{color:var(--muted);font-weight:600;text-align:left;padding:0 10px 11px;border-bottom:1px solid var(--line)}td{padding:10px;border-bottom:1px solid #26322b;color:#dce6dd}tbody tr:last-child td{border-bottom:0}.empty{text-align:center;color:var(--muted);padding:28px 10px}.event-list{display:grid;gap:0}.event{display:grid;grid-template-columns:1fr auto;gap:3px 10px;padding:10px 0;border-bottom:1px solid #26322b;font-size:11px}.event:last-child{border-bottom:0}.event-type{font-weight:700}.event-time{font:10px ui-monospace,SFMono-Regular,Consolas,monospace;color:var(--muted)}.event-detail{grid-column:1/-1;color:var(--muted);overflow-wrap:anywhere}.toast{position:fixed;right:22px;bottom:22px;background:#253328;border:1px solid #405542;border-radius:12px;padding:12px 16px;font-size:12px;box-shadow:0 12px 40px #0007;opacity:0;transform:translateY(8px);pointer-events:none;transition:.2s;max-width:min(420px,calc(100vw - 44px));z-index:2}.toast.show{opacity:1;transform:translateY(0)}.toast.error{border-color:#71423e;color:#ffb1aa}
+    @media(max-width:850px){header,main{padding-left:20px;padding-right:20px}.layout,.lower{grid-template-columns:1fr}.metrics{gap:10px}.metric-value{font-size:32px}}@media(max-width:560px){header{align-items:flex-start;padding-top:19px}.header-right{align-items:flex-end;flex-direction:column-reverse;gap:8px}.port-label{font-size:10px}.brand-mark{width:38px;height:38px}.brand h1{font-size:17px}.metrics{grid-template-columns:1fr}.metric-value{margin:12px 0 4px}.metric-card{padding:16px}.metric-card:first-child{grid-column:auto}.intro{align-items:flex-start;flex-direction:column}.updated{align-self:flex-end}.card{padding:17px}.layout,.lower{gap:11px;margin-top:11px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand"><div class="brand-mark">BP</div><div><div class="eyebrow">Embedded systems · Monitor</div><h1>Blue Pill Console</h1></div></div>
+    <div class="header-right"><span id="portLabel" class="port-label">USART1 · 115200 baud</span><div id="connection" class="status"><i class="dot"></i><span id="connectionText">Đang chờ dữ liệu</span></div></div>
+  </header>
+  <main>
+    <div class="intro"><div><div class="section-kicker">Tổng quan hệ thống</div><h2>Giám sát thiết bị</h2><p>STM32F103C8T6 · Dữ liệu cập nhật theo thời gian thực</p></div><div class="updated">CẬP NHẬT <span id="updatedAt">—</span></div></div>
+    <section class="metrics" aria-label="Số liệu cảm biến">
+      <article class="card metric-card"><div class="metric-head"><span>NHIỆT ĐỘ · LM35</span><span class="metric-icon">°</span></div><div id="temperature" class="metric-value">— <span class="unit">°C</span></div><div class="metric-foot">Giá trị quy đổi từ đầu vào ADC</div></article>
+      <article class="card metric-card"><div class="metric-head"><span>MỨC KHÓI · MQ-2</span><span class="metric-icon">≈</span></div><div id="smoke" class="metric-value">— <span class="unit">%</span></div><div id="smokeRaw" class="metric-foot">ADC thô · —</div><div class="smoke-meter"><div id="smokeFill" class="smoke-fill"></div></div></article>
+      <article class="card metric-card"><div class="metric-head"><span>NÚT NHẤN</span><span class="metric-icon">↘</span></div><div class="button-state"><div class="button-pill">NÚT 01 <strong id="button1">—</strong></div><div class="button-pill">NÚT 02 <strong id="button2">—</strong></div></div><div class="metric-foot" style="margin-top:14px">Trạng thái input PA6 · PA7</div></article>
+    </section>
+    <section class="layout">
+      <article class="card"><div class="section-head"><div><h3>Lịch sử nhiệt độ</h3><p>Biến thiên theo mẫu dữ liệu gần nhất</p></div><span class="live-tag">● LIVE</span></div><div class="chart-wrap"><canvas id="chart" aria-label="Biểu đồ lịch sử nhiệt độ"></canvas></div><div class="chart-legend"><i class="legend-dot"></i>Nhiệt độ °C</div></article>
+      <article class="card"><div class="section-head"><div><h3>Điều khiển thiết bị</h3><p>Gửi lệnh trực tiếp đến board qua UART</p></div></div>
+        <div class="control-list">
+          <div class="control-row"><span class="control-name"><i id="led1Light" class="led-light"></i>LED 01 <small class="muted">PB0</small></span><button id="led1Toggle" class="toggle" role="switch" aria-checked="false" aria-label="Bật tắt LED 1" disabled></button></div>
+          <div class="control-row"><span class="control-name"><i id="led2Light" class="led-light"></i>LED 02 <small class="muted">PB1</small></span><button id="led2Toggle" class="toggle" role="switch" aria-checked="false" aria-label="Bật tắt LED 2" disabled></button></div>
+          <div class="control-row"><span class="control-name"><i id="led3Light" class="led-light"></i>LED 03 <small class="muted">PB10</small></span><button id="led3Toggle" class="toggle" role="switch" aria-checked="false" aria-label="Bật tắt LED 3" disabled></button></div>
+        </div>
+        <div class="fan-control"><div class="fan-top"><span>Quạt DC · PWM</span><output id="fanValue">0%</output></div><input id="fanSlider" type="range" min="0" max="100" value="0" aria-label="Công suất quạt" disabled><div class="fan-bottom"><span>PA8 · TIM1_CH1</span><button id="fanSend" class="send-button" disabled>GỬI LỆNH ↗</button></div></div>
+        <div class="warning"><span>ⓘ</span><span>MQ-2 hiển thị tỷ lệ ADC tương đối, chưa hiệu chuẩn thành ppm và không thay thế thiết bị báo cháy đạt chuẩn.</span></div>
+      </article>
+    </section>
+    <section class="lower">
+      <article class="card"><div class="section-head"><div><h3>Lịch sử cảm biến</h3><p>Các mẫu gần nhất lưu trong SQLite</p></div></div><div class="table-wrap"><table><thead><tr><th>THỜI GIAN</th><th>NHIỆT ĐỘ</th><th>KHÓI ADC</th><th>LED 1 / 2 / 3</th><th>QUẠT</th></tr></thead><tbody id="history"><tr><td class="empty" colspan="5">Đang tải dữ liệu…</td></tr></tbody></table></div></article>
+      <article class="card"><div class="section-head"><div><h3>Hoạt động gần đây</h3><p>Kết nối UART và lệnh điều khiển</p></div></div><div id="events" class="event-list"><div class="empty">Chưa có hoạt động</div></div></article>
+    </section>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script>
+    "use strict";
+    const $ = (id) => document.getElementById(id);
+    let currentState = {};
+    let chartRows = [];
+    let toastTimer;
+    async function api(url, options = {}) {
+      const response = await fetch(url, options);
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error || "Yêu cầu không thành công");
+      return data;
+    }
+    function notify(message, isError = false) {
+      const element = $("toast");
+      element.textContent = message;
+      element.classList.toggle("error", isError);
+      element.classList.add("show");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => element.classList.remove("show"), 3000);
+    }
+    function setText(id, value) { $(id).textContent = value; }
+    function renderState(payload) {
+      currentState = payload.state || {};
+      const status = payload.connection || {};
+      const connected = Boolean(status.connected);
+      $("connection").classList.toggle("online", connected);
+      setText("connectionText", connected ? "Đã kết nối" : "Mất kết nối");
+      setText("portLabel", `${status.port || "UART"} · 115200 baud`);
+      const temperature = Number(currentState.temperature);
+      setText("temperature", Number.isFinite(temperature) ? `${temperature.toFixed(1)} °C` : "— °C");
+      const smoke = Number(currentState.smoke_percent);
+      setText("smoke", Number.isFinite(smoke) ? `${smoke.toFixed(1)} %` : "— %");
+      setText("smokeRaw", `ADC thô · ${currentState.smoke_raw ?? "—"}`);
+      $("smokeFill").style.width = `${Number.isFinite(smoke) ? Math.max(0, Math.min(100, smoke)) : 0}%`;
+      for (const n of [1, 2]) setText(`button${n}`, currentState[`button${n}`] == null ? "—" : currentState[`button${n}`] ? "NHẤN" : "THẢ");
+      for (const n of [1, 2, 3]) {
+        const on = Boolean(currentState[`led${n}`]);
+        $(`led${n}Toggle`).setAttribute("aria-checked", String(on));
+        $(`led${n}Toggle`).disabled = !connected;
+        $(`led${n}Light`).classList.toggle("on", on);
+      }
+      $("fanSlider").disabled = !connected;
+      $("fanSend").disabled = !connected;
+      const fan = Number(currentState.fan ?? 0);
+      if (document.activeElement !== $("fanSlider")) $("fanSlider").value = fan;
+      setText("fanValue", `${$("fanSlider").value}%`);
+      setText("updatedAt", status.last_seen ? new Date(status.last_seen).toLocaleTimeString("vi-VN") : "—");
+    }
+    async function sendControl(values) {
+      try {
+        await api("/api/control", {method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(values)});
+        notify("Đã gửi lệnh · đang chờ board cập nhật trạng thái");
+      } catch (error) { notify(error.message, true); }
+    }
+    for (const n of [1, 2, 3]) $( `led${n}Toggle`).addEventListener("click", () => sendControl({[`led${n}`]: currentState[`led${n}`] ? 0 : 1}));
+    $("fanSlider").addEventListener("input", (event) => setText("fanValue", `${event.target.value}%`));
+    $("fanSend").addEventListener("click", () => sendControl({fan:Number($("fanSlider").value)}));
+    function drawChart(rows) {
+      const canvas = $("chart");
+      const box = canvas.getBoundingClientRect();
+      if (!box.width || !box.height) return;
+      const ratio = window.devicePixelRatio || 1;
+      canvas.width = Math.round(box.width * ratio);
+      canvas.height = Math.round(box.height * ratio);
+      const ctx = canvas.getContext("2d");
+      ctx.scale(ratio, ratio);
+      const w = box.width, h = box.height;
+      const values = rows.map(row => Number(row.temperature)).filter(Number.isFinite);
+      ctx.clearRect(0, 0, w, h);
+      const left = 38, right = w - 8, top = 10, bottom = h - 24;
+      if (values.length < 2) {
+        ctx.fillStyle = "#91a397"; ctx.font = "12px system-ui";
+        ctx.fillText("Chưa đủ dữ liệu để hiển thị biểu đồ", 8, 25); return;
+      }
+      let min = Math.floor(Math.min(...values) - 1), max = Math.ceil(Math.max(...values) + 1);
+      if (max <= min) max = min + 1;
+      ctx.font = "10px ui-monospace, monospace";
+      for (let i=0;i<4;i++) {
+        const y = top + i*(bottom-top)/3;
+        ctx.strokeStyle="#2a382f";ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(left,y);ctx.lineTo(right,y);ctx.stroke();
+        ctx.fillStyle="#91a397";ctx.fillText((max-(max-min)*i/3).toFixed(1),0,y+3);
+      }
+      const points = values.slice(-80);
+      ctx.beginPath();
+      points.forEach((v,i)=>{const x=left+i*(right-left)/(points.length-1);const y=bottom-(v-min)*(bottom-top)/(max-min);if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);});
+      ctx.strokeStyle="#b7f36b";ctx.lineWidth=2;ctx.lineJoin="round";ctx.stroke();
+      const gradient=ctx.createLinearGradient(0,top,0,bottom);gradient.addColorStop(0,"#b7f36b2a");gradient.addColorStop(1,"#b7f36b00");
+      const last=points.length-1;ctx.lineTo(right,bottom);ctx.lineTo(left,bottom);ctx.closePath();ctx.fillStyle=gradient;ctx.fill();
+      const lastY=bottom-(points[last]-min)*(bottom-top)/(max-min);ctx.beginPath();ctx.arc(right,lastY,3,0,Math.PI*2);ctx.fillStyle="#dfffaf";ctx.fill();
+    }
+    async function loadHistory() {
+      try {
+        chartRows = await api("/api/history?limit=100");
+        const tbody=$("history");tbody.replaceChildren();
+        [...chartRows].reverse().slice(0,12).forEach(row=>{
+          const tr=document.createElement("tr");
+          const vals=[new Date(row.timestamp).toLocaleTimeString("vi-VN"),row.temperature == null ? "—" : `${Number(row.temperature).toFixed(1)} °C`,row.smoke_raw ?? "—",`${row.led1 ?? "—"} / ${row.led2 ?? "—"} / ${row.led3 ?? "—"}`,`${row.fan ?? "—"}%`];
+          vals.forEach(value=>{const td=document.createElement("td");td.textContent=value;tr.appendChild(td);});tbody.appendChild(tr);
+        });
+        if(!chartRows.length)tbody.innerHTML='<tr><td class="empty" colspan="5">Chưa có mẫu dữ liệu</td></tr>';
+        drawChart(chartRows);
+      } catch(error) { notify(`Không tải được lịch sử: ${error.message}`,true); }
+    }
+    async function loadEvents() {
+      try {
+        const rows=await api("/api/events");const list=$("events");list.replaceChildren();
+        rows.slice(0,6).forEach(row=>{
+          const item=document.createElement("div");item.className="event";
+          const type=document.createElement("span");type.className="event-type";type.textContent=row.event_type.replaceAll("_"," ");
+          const time=document.createElement("time");time.className="event-time";time.textContent=new Date(row.timestamp).toLocaleTimeString("vi-VN");
+          const detail=document.createElement("span");detail.className="event-detail";detail.textContent=row.details;
+          item.append(type,time,detail);list.appendChild(item);
+        });
+        if(!rows.length)list.innerHTML='<div class="empty">Chưa có hoạt động</div>';
+      } catch (_) { /* Activity history is optional while the serial device is offline. */ }
+    }
+    async function refresh() {
+      try { renderState(await api("/api/state")); }
+      catch (_) { $("connection").classList.remove("online");setText("connectionText","Không kết nối máy chủ"); }
+    }
+    refresh();loadHistory();loadEvents();
+    setInterval(refresh,1000);setInterval(loadHistory,5000);setInterval(loadEvents,5000);
+    window.addEventListener("resize",()=>drawChart(chartRows));
+  </script>
+</body>
+</html>
