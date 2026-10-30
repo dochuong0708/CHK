@@ -122,7 +122,12 @@ static void MX_GPIO_Init(void) {
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
     HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
-    // Cấu hình Input: Gas DO (PA1), Flame DO (PA2) với điện trở kéo lên Pull-up
+    // Cấu hình PA0 cho ADC và PA1/PA2 là input với điện trở kéo lên.
+    GPIO_InitStruct.Pin = MQ2_AO_PIN;
+    GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
     GPIO_InitStruct.Pin = MQ2_DO_PIN | FLAME_DO_PIN;
     GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
     GPIO_InitStruct.Pull = GPIO_PULLUP;
